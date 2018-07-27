@@ -25,7 +25,7 @@ class Visit < ApplicationRecord
   # validate :only_permited_status
 
   enum status: {done: 1, in_process: 2}
-  validates :status, :inclusion => {in: Visit.statuses.keys}
+  # validates :status, :inclusion => {in: Visit.statuses}
 
 
   def set_status
