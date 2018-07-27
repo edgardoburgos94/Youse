@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: rooms
+#
+#  id         :integer          not null, primary key
+#  status     :integer
+#  number     :integer
+#  daily_rate :float
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  number: 1
+  price: 1.5
+
+two:
+  status: 1
+  number: 1
+  price: 1.5
