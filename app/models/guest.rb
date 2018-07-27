@@ -11,5 +11,8 @@
 
 class Guest < ApplicationRecord
   has_many :visits, dependent: :destroy
+
+  validates :name, presence: true
+  validates :loyalty_tier, presence: true
   enum loyalty_tier: {bronze: 1, platinum: 2, gold: 3, diamond: 4, chuck_norris: 5}
 end

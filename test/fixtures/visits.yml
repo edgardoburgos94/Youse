@@ -15,10 +15,10 @@
 
 one:
   room: one
-  gest: one
+  guest: one
   days: 1
 
 two:
   room: two
-  gest: two
+  guest: two
   days: 1

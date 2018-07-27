@@ -22,27 +22,33 @@ class Visit < ApplicationRecord
   validates :days, presence: true
   validates :room_id, presence: true
   validates :guest_id, presence: true
+  # validate :only_permited_status
 
   enum status: {done: 1, in_process: 2}
+  validates :status, :inclusion => {in: Visit.statuses.keys}
+
 
   def set_status
-    puts "INSIDE SET STATUS"
+    # puts "INSIDE SET STATUS"
     self.status = 2
   end
 
   def remove_room_disponibility
-    puts "INSIDE REMOVE ROOM DISPONIBILITY"
-
-    self.room.update(status: 1)
+    # puts "INSIDE REMOVE ROOM DISPONIBILITY"
+    self.room.update(status: 2)
   end
 
   def reset_room_disponibility
-    puts "INSIDE RESET ROOM DISPONIBILITY"
-
-    puts self.room
-    self.room.update(status: 2)
-    puts self.room
-    
+    # puts "----INSIDE RESET ROOM DISPONIBILITY"
+    self.room.update(status: 1)
   end
+
+  # def only_permited_status
+  #   puts "PRUEBA EL ESTATUS"
+  #   puts self.status
+  #   if !['done', 'in_process'].include?(self.status)
+  #     errors.add(:status, "Not permited")
+  #   end
+  # end
 
 end
